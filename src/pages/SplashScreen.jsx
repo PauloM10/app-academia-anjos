@@ -1,0 +1,52 @@
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import AppLogo from "../components/layout/AppLogo";
+import { appConfig } from "../config/appConfig";
+
+export default function SplashScreen({ onFinish }) {
+  useEffect(() => {
+    const timer = setTimeout(() => onFinish(), 1700);
+    return () => clearTimeout(timer);
+  }, [onFinish]);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 flex items-center justify-center p-6">
+      
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 18 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center text-white"
+      >
+
+        {/* LOGO */}
+        <div className="mx-auto mb-6 flex justify-center">
+          <div className="rounded-full p-3 bg-yellow-400 shadow-xl">
+            <AppLogo size="large" />
+          </div>
+        </div>
+
+        {/* NOME */}
+        <div className="text-3xl font-black tracking-wide">
+          {appConfig.nomeAcademia}
+        </div>
+
+        {/* FRASE */}
+        <div className="text-blue-100 mt-2">
+          Disciplina, evolução e constância no tatame
+        </div>
+
+        {/* LOADING */}
+        <div className="mt-8 w-56 h-2 rounded-full bg-white/20 overflow-hidden mx-auto">
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: "0%" }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="h-full w-full bg-yellow-400"
+          />
+        </div>
+
+      </motion.div>
+    </div>
+  );
+}
