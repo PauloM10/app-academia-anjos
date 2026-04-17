@@ -11,7 +11,6 @@ import FotosScreen from "./pages/aluno/FotosScreen";
 import LojaScreen from "./pages/aluno/LojaScreen";
 import ChamadaScreen from "./pages/aluno/ChamadaScreen";
 import PerfilAlunoScreen from "./pages/aluno/PerfilAlunoScreen";
-import VideosScreen from "./pages/aluno/VideosScreen";
 import SobreScreen from "./pages/aluno/SobreScreen";
 import AvisosScreen from "./pages/aluno/AvisosScreen";
 
@@ -25,7 +24,6 @@ import AdminChamadaScreen from "./pages/admin/AdminChamadaScreen";
 import AdminFotosScreen from "./pages/admin/AdminFotosScreen";
 import AdminLojaScreen from "./pages/admin/AdminLojaScreen";
 import AdminAvisosScreen from "./pages/admin/AdminAvisosScreen";
-import AdminVideosScreen from "./pages/admin/AdminVideosScreen";
 import AdminSobreScreen from "./pages/admin/AdminSobreScreen";
 
 import { observarAuth } from "./services/authService";
@@ -151,8 +149,6 @@ export default function App() {
           <AdminFotosScreen goTo={setScreen} usuario={usuario} />
         ) : screen === "admin_avisos" ? (
           <AdminAvisosScreen goTo={setScreen} usuario={usuario} />
-        ) : screen === "admin_videos" ? (
-          <AdminVideosScreen goTo={setScreen} usuario={usuario} />
         ) : screen === "admin_sobre" ? (
           <AdminSobreScreen goTo={setScreen} usuario={usuario} />
         ) : (
@@ -166,8 +162,6 @@ export default function App() {
         <HomeAluno goTo={setScreen} usuario={usuario} />
       ) : screen === "agenda" ? (
         <AgendaScreen goTo={setScreen} usuario={usuario} />
-      ) : screen === "videos" ? (
-        <VideosScreen goTo={setScreen} usuario={usuario} />
       ) : screen === "fotos" ? (
         <FotosScreen goTo={setScreen} usuario={usuario} />
       ) : screen === "loja" ? (

@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { BookOpen, Download } from "lucide-react";
-import { Browser } from "@capacitor/browser";
+import { BookOpen } from "lucide-react";
 
 import PhoneFrame from "../../components/layout/PhoneFrame";
 import BottomNav from "../../components/layout/BottomNav";
-import Button from "../../components/ui/Button";
 import { Card, CardContent } from "../../components/ui/Card";
 
 import { buscarSobreAcademia } from "../../services/sobreService";
@@ -27,38 +25,18 @@ export default function SobreScreen({ goTo }) {
     }
   }
 
-  async function handleBaixarPdf() {
-    try {
-      if (!dados?.pdfUrl) return;
-
-      let url = dados.pdfUrl.trim();
-
-      if (url.startsWith("/")) {
-        url = `${window.location.origin}${url}`;
-      }
-
-      await Browser.open({ url });
-    } catch (error) {
-      console.error("Erro ao abrir PDF:", error);
-    }
-  }
-
   return (
     <PhoneFrame title="Sobre a Academia" showBack onBack={() => goTo("perfil")}>
       <div className="p-4 space-y-4">
-
         <Card className="border border-blue-200">
           <CardContent className="p-5 space-y-4">
-
-            {/* TÍTULO */}
             <div className="font-semibold flex items-center gap-2 text-blue-900">
               <BookOpen className="h-5 w-5 text-yellow-400" />
               {dados?.titulo || "Sobre a academia"}
             </div>
 
-            {/* TEXTO */}
             {erro ? (
-              <div className="text-sm text-blue-900 font-medium">
+              <div className="text-sm text-red-600 font-medium">
                 {erro}
               </div>
             ) : (
@@ -66,16 +44,6 @@ export default function SobreScreen({ goTo }) {
                 {dados?.texto || "Nenhuma informação cadastrada ainda."}
               </div>
             )}
-
-            {/* BOTÃO PDF */}
-            <Button
-              className="w-full bg-blue-900 hover:bg-blue-800 text-white"
-              onClick={handleBaixarPdf}
-            >
-              <Download className="h-4 w-4 mr-2" />
-              {dados?.pdfTitulo || "Baixar e-book da academia"}
-            </Button>
-
           </CardContent>
         </Card>
 

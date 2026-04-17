@@ -5,7 +5,6 @@ import {
   Image as ImageIcon,
   Trophy,
   ClipboardCheck,
-  PlayCircle,
 } from "lucide-react";
 
 import PhoneFrame from "../../components/layout/PhoneFrame";
@@ -42,12 +41,9 @@ export default function HomeAluno({ goTo }) {
   return (
     <PhoneFrame title="Home">
       <div className="p-4 space-y-4">
-
-        {/* CARD PRINCIPAL */}
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
           <Card className="rounded-3xl border-0 shadow-xl overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 text-white">
             <CardContent className="p-5">
-
               <div className="flex items-center gap-4 mb-4">
                 <AppLogo size="small" />
 
@@ -66,14 +62,11 @@ export default function HomeAluno({ goTo }) {
 
                 <Trophy className="h-7 w-7 text-yellow-400" />
               </div>
-
             </CardContent>
           </Card>
         </motion.div>
 
-        {/* GRID */}
         <div className="grid grid-cols-2 gap-3">
-
           <Card className="cursor-pointer" onClick={() => goTo("agenda")}>
             <CardContent className="p-4">
               <CalendarDays className="h-5 w-5 mb-2 text-blue-900" />
@@ -89,11 +82,9 @@ export default function HomeAluno({ goTo }) {
               <div className="text-sm text-zinc-500">Galeria</div>
             </CardContent>
           </Card>
-
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
-
+        <div className="grid grid-cols-1 gap-3">
           <Card className="cursor-pointer" onClick={() => goTo("chamada")}>
             <CardContent className="p-4">
               <ClipboardCheck className="h-5 w-5 mb-2 text-blue-900" />
@@ -101,18 +92,8 @@ export default function HomeAluno({ goTo }) {
               <div className="text-sm text-zinc-500">Presença</div>
             </CardContent>
           </Card>
-
-          <Card className="cursor-pointer" onClick={() => goTo("videos")}>
-            <CardContent className="p-4">
-              <PlayCircle className="h-5 w-5 mb-2 text-blue-900" />
-              <div className="font-semibold">Vídeos</div>
-              <div className="text-sm text-zinc-500">Conteúdos</div>
-            </CardContent>
-          </Card>
-
         </div>
 
-        {/* AVISO */}
         {avisoDestaque && (
           <Card className="border border-yellow-300">
             <CardContent className="p-4">
@@ -126,7 +107,6 @@ export default function HomeAluno({ goTo }) {
           </Card>
         )}
 
-        {/* PRODUTO */}
         {produtoDestaque && (
           <Card className="border border-blue-200">
             <CardContent className="p-4">
@@ -141,7 +121,6 @@ export default function HomeAluno({ goTo }) {
         )}
 
         <BottomNav current="home" onChange={goTo} />
-
       </div>
     </PhoneFrame>
   );

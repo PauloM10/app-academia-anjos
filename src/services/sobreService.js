@@ -12,8 +12,6 @@ export async function buscarSobreAcademia() {
     return {
       titulo: appConfig.textos.tituloSobre,
       texto: appConfig.textos.sobreAcademia,
-      pdfTitulo: appConfig.textos.pdfTituloPadrao,
-      pdfUrl: appConfig.documentos.ebookPadrao,
     };
   }
 
@@ -28,8 +26,6 @@ export async function salvarSobreAcademia(dados) {
     {
       titulo: dados.titulo,
       texto: dados.texto,
-      pdfTitulo: dados.pdfTitulo || appConfig.textos.pdfTituloPadrao,
-      pdfUrl: dados.pdfUrl || appConfig.documentos.ebookPadrao,
       atualizadoEm: serverTimestamp(),
     },
     { merge: true }
