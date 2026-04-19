@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">nova-raiz-app</string>
-    <string name="title_activity_main">nova-raiz-app</string>
-    <string name="package_name">com.novaraiz.app</string>
-    <string name="custom_url_scheme">com.novaraiz.app</string>
+    <string name="app_name">Academia Anjos</string>
+    <string name="title_activity_main">Academia Anjos</string>
+    <string name="package_name">com.tkd.academiaanjos</string>
+    <string name="custom_url_scheme">com.tkd.academiaanjos</string>
 </resources>

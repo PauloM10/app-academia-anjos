@@ -1,4 +1,4 @@
-package com.novaraiz.app;
+package com.tkd.academiaanjos;
 
 import com.getcapacitor.BridgeActivity;
 
